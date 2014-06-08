@@ -1,0 +1,12 @@
+<form role="form" id="login-form" method="POST" action="/user/login">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="username">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+  </div>
+  <input type="hidden" name="_csrf" value="" id="csrf_token_login" />
+  <button type="submit" class="btn btn-default" id="login-button">Submit</button>
+</form>

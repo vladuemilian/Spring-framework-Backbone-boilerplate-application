@@ -1,4 +1,5 @@
-define(['jquery', 'underscore', 'backbone', 'bootstrap' // Request router.js
+/*
+ define(['jquery', 'underscore', 'backbone', 'bootstrap' // Request router.js
         ], function($, _, Backbone, Bootstrap) {
 	$.noConflict();
 	_.noConflict();
@@ -6,7 +7,6 @@ define(['jquery', 'underscore', 'backbone', 'bootstrap' // Request router.js
 	var AppView = Backbone.View.extend({
 		el: $('#container'),
 		// template which has the placeholder 'who' to be substitute later 
-		/*
 		template: _.template("<h3>Hello <%= who %><h3>"),
 		initialize: function(){
 			this.render();
@@ -15,10 +15,10 @@ define(['jquery', 'underscore', 'backbone', 'bootstrap' // Request router.js
 			// render the function using substituting the varible 'who' for 'world!'. 
 			this.$el.html(this.template({who: 'world!'}));
 			//***Try putting your name instead of world.
-		}*/
+		}
 	});
 
 	var appView = new AppView();
 
 
-});
+});*/

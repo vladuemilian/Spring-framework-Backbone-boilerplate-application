@@ -1,4 +1,4 @@
-package market.controllers;
+package market.controllers.api.v1dot0.user;
 
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -9,27 +9,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HomeController
-{
-
-
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String Index()
-	{
-		return "index";
-	}
+@ResponseBody
+public class UserController {
 	
-	@RequestMapping(value="/a/**", method=RequestMethod.GET)
-	public String Pages()
-	{
-		return "index";
-	}
 	
-	@RequestMapping(value="/user/login", method=RequestMethod.GET)
-	public String Login()
+	@RequestMapping(value="/api/v1.0/public/user/check", method=RequestMethod.GET)
+	public boolean UserCheck()
 	{
-		return "index";
+		boolean status = false;
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication(); 
+		if (!(auth instanceof AnonymousAuthenticationToken)) { 
+			status=true;
+		}
+		return status;
 	}
-	
-
 }

@@ -1,3 +1,11 @@
 /home/rgb/workspace/http/app-market/src/main/java/market/controllers/HomeController.java
+/home/rgb/workspace/http/app-market/src/main/java/market/models/user/User.java
 /home/rgb/workspace/http/app-market/src/main/java/market/config/SecurityConfig.java
+/home/rgb/workspace/http/app-market/src/main/java/market/models/user/UserAuthority.java
+/home/rgb/workspace/http/app-market/src/main/java/market/controllers/api/v1dot0/user/UserController.java
+/home/rgb/workspace/http/app-market/src/main/java/market/config/LoginFailedHandler.java
+/home/rgb/workspace/http/app-market/src/main/java/market/config/LoginSuccessHandler.java
+/home/rgb/workspace/http/app-market/src/main/java/market/models/user/UserInterface.java
+/home/rgb/workspace/http/app-market/src/main/java/market/models/user/UserRepositoryInterface.java
+/home/rgb/workspace/http/app-market/src/main/java/market/services/AuthService.java
 /home/rgb/workspace/http/app-market/src/main/java/market/App.java
