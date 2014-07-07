@@ -15,7 +15,6 @@ define(['jquery', 'underscore', 'backbone',
 			return _.template(masterTemplate, {})
 		},
 		
-		
 		initialize: function(){
 			this.render();
 			this.header = new headerLayout({el: $("#header")});

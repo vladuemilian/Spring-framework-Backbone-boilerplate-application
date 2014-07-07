@@ -4,6 +4,7 @@ import market.services.AuthService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -31,7 +32,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 			.antMatchers("/js/**").permitAll()
 			.antMatchers("/templates/**").permitAll()
 			.antMatchers("/vendor/**").permitAll()
-			.antMatchers("/api/v1.0/public/**").permitAll()
+			
+			//no-authentication required
+			.antMatchers(HttpMethod.GET, "/api/v1.0/user/check").permitAll()
+			.antMatchers(HttpMethod.POST, "/api/v1.0/user").permitAll()
+			.antMatchers(HttpMethod.POST, "/api/v1.0/user/**/clinic").permitAll()
+			
+			//authentication required
 			.anyRequest().authenticated()
 			.and()
 		.formLogin()

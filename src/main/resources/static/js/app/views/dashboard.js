@@ -1,16 +1,17 @@
 define(['jquery', 'underscore', 'backbone', 
-        'views/layouts/master'
+        'views/layouts/master', 'views/layouts/header/header2'
         ], 
         function(
         		$, _, Backbone, 
-        		MasterLayout 
+        		MasterLayout, Header2Layout
         		){
 
 	var AppView = Backbone.View.extend({
 		el: $('#container'),
 		
 		initialize: function(){
-			var masterLayout = new MasterLayout;
+			//var masterLayout = new MasterLayout;
+			var header2Layout = new Header2Layout;
 			this.render();
 		},
 		render: function(){

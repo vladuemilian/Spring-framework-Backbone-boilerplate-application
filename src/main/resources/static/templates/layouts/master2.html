@@ -1,0 +1,27 @@
+<div class="boxed-layout container">
+	<div class="appHeader" id="appHeader"></div>
+	<div class="appContent" id="appContent"></div>
+</div>
+
+
+<!-- JS Global Compulsory -->           
+<script type="text/javascript" src="<%= app_vars.base_url%>/assets/plugins/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="<%= app_vars.base_url%>/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="<%= app_vars.base_url%>/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="<%= app_vars.base_url%>/assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="<%= app_vars.base_url%>/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="<%= app_vars.base_url%>/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<!-- JS Page Level -->           
+<script type="text/javascript" src="<%= app_vars.base_url%>/assets/js/app.js"></script>
+<script type="text/javascript" src="<%= app_vars.base_url%>/assets/js/pages/index.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        App.initSliders();
+        Index.initRevolutionSlider();
+    });
+</script>
+<!--[if lt IE 9]>
+    <script src="<%= app_vars.base_url%>/assets/plugins/respond.js"></script>
+<![endif]-->
