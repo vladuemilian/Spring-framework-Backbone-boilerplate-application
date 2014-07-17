@@ -24,8 +24,16 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
-	
-	@RequestMapping(value="/user/check", method=RequestMethod.GET)
+
+	/**
+	 * @brief check if the user is authenticated - return a json
+	 * with true/false status 
+	 * 
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value="/user/auth/check", method=RequestMethod.GET)
 	public AuthStatus UserCheck(HttpServletRequest request, HttpServletResponse response)
 	{
 		AuthStatus authStatus = new AuthStatus();
@@ -34,16 +42,30 @@ public class UserController {
 		if (!(auth instanceof AnonymousAuthenticationToken)) { 
 			authStatus.status=true;
 		}
-		
 		return authStatus;
 	}
+	
 
-	static class AuthStatus
+	@RequestMapping(value="/user/auth", method=RequestMethod.GET)
+	public User getAuthenticatedUser()
 	{
-		public boolean status = false;
+		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	
+		return user;
 	}
+
 	
-	
+	/**
+	 * @brief create a new user 
+	 * 
+	 * 
+	 * @param request
+	 * @param response
+	 * @param email
+	 * @param password
+	 * @return
+	 * @throws ValidationException
+	 */
 	@RequestMapping(value="/user", method=RequestMethod.POST)
 	public User postUser(
 			HttpServletRequest request, HttpServletResponse response,
@@ -56,4 +78,11 @@ public class UserController {
 		
 		return user;
 	}	
+	
+	
+	
+	static class AuthStatus
+	{
+		public boolean status = false;
+	}
 }

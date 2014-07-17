@@ -19,10 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 	private AuthService authService;
 	
 	@Autowired
-	private LoginSuccessHandler loginSuccessHandler;
-	
-	@Autowired
-	private LoginFailedHandler loginFailedHandler;
+	private LoginResponseHandler loginResponseHandler;
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -32,19 +29,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 			.antMatchers("/js/**").permitAll()
 			.antMatchers("/templates/**").permitAll()
 			.antMatchers("/vendor/**").permitAll()
-			
 			//no-authentication required
-			.antMatchers(HttpMethod.GET, "/api/v1.0/user/check").permitAll()
+			.antMatchers(HttpMethod.GET, "/api/v1.0/user/auth/check").permitAll()
 			.antMatchers(HttpMethod.POST, "/api/v1.0/user").permitAll()
 			.antMatchers(HttpMethod.POST, "/api/v1.0/user/**/clinic").permitAll()
+			.antMatchers("/").permitAll()
 			
 			//authentication required
-			.anyRequest().authenticated()
+			//.anyRequest().authenticated()
+			.antMatchers("/api/**").authenticated()
 			.and()
 		.formLogin()
 			.loginPage("/user/login")
-			.successHandler(loginSuccessHandler)
-			.failureHandler(loginFailedHandler)
+			.successHandler(loginResponseHandler)
+			.failureHandler(loginResponseHandler)
 			.permitAll();
 		
 	}

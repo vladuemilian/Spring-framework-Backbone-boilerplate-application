@@ -2,6 +2,7 @@ package market.services;
 
 import java.util.ArrayList;
 
+import market.models.user.User;
 import market.models.user.UserAuthority;
 
 import org.springframework.security.authentication.BadCredentialsException;
@@ -9,7 +10,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -45,7 +45,11 @@ public class AuthService extends AbstractUserDetailsAuthenticationProvider
 			throw new BadCredentialsException("auth error");
 		}
 		
-		User user = new User("asdf", "asdf", roles);
+		//User user = new User("asdf", "asdf", roles);
+	
+		User user = new User();
+		user.setUsername("sorin@pc.com");
+		user.setPassword(password);
 		
 		return user;
 		

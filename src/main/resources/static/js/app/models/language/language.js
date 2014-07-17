@@ -49,7 +49,12 @@ define(['jquery', 'backbone', 'underscore',
 				return this.getCurrentLanguage().get("resource")[id];
 			}
 			throw "Language message not found for key: " + id;
+		},
+		
+		getLanguageObject: function(){
+			return this.getCurrentLanguage().get("resource");
 		}
+
 	});
 	
 	

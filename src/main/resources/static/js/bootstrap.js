@@ -1,4 +1,10 @@
+//configuration global constants
+
+var API_VERSION = "1.0";
+
 requirejs.config({
+	
+	
 	//By default load any module IDs from js/lib
 	baseUrl: '/js/app',
 	//except, if the module ID starts with "app",
@@ -40,5 +46,6 @@ requirejs.config({
 require(['router'],
 function()
 {
+	
 	console.log("app loaded");
 });  

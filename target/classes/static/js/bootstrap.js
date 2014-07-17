@@ -1,4 +1,10 @@
+//configuration global constants
+
+var API_VERSION = "1.0";
+
 requirejs.config({
+	
+	
 	//By default load any module IDs from js/lib
 	baseUrl: '/js/app',
 	//except, if the module ID starts with "app",
@@ -12,8 +18,9 @@ requirejs.config({
 		underscore: '/js/lib/underscore.min',
 		backbone: '/js/lib/backbone.min',
 		bootstrap: '/js/lib/boostrap.min',	
-		
-		templates:'../templates'
+		ajaxform: '/js/lib/ajaxform',
+		text: '/js/lib/text',
+		templates:'../../templates'
 	},
 
 	shim:
@@ -28,11 +35,17 @@ requirejs.config({
 			deps:['jquery'],
 			exports: '$'
 		},
+		'ajaxform':
+		{
+			deps:['jquery'],
+			exports: '$'
+		}
 	}
 });
 
 require(['router'],
 function()
 {
+	
 	console.log("app loaded");
 });  

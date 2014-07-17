@@ -1,13 +1,15 @@
 define(['jquery', 'underscore', 'backbone', 'bootstrap', 
         'core/lang',
-        'routers/home', 'routers/user/auth'
+        'routers/home'
         ], function($, _, Backbone, Bootstrap,
         lang,
-        HomeRouter, UserAuthRouter) {
+        HomeRouter) {
 	$.noConflict();
 	_.noConflict();
 
 
+
+	
 	//var lang = new Lang;
 	// Start Backbone history a necessary step for bookmarkable URL's
 	//console.log(Lang.getCurrentPrefix() );

@@ -5,6 +5,7 @@ define(['jquery', 'underscore'
 	var View = {
 		
 		renderedViews: [],
+		currentView: null,
 			
 		render: function(v)
 		{
@@ -18,9 +19,12 @@ define(['jquery', 'underscore'
 		},
 		
 		forceRender: function(v){
+			/*
 			if(this.getViewById(v.vid)==null){
 				this.renderedViews.push(v);
 			}
+			*/
+			this.currentView = v;
 			
 			v.render();
 		},
@@ -40,6 +44,8 @@ define(['jquery', 'underscore'
 					view.render();
 				}
 			});
+			
+			this.currentView.render();
 		},
 	
 		getViewById: function(id){

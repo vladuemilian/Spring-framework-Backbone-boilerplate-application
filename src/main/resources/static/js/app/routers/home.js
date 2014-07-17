@@ -7,12 +7,11 @@ function($, Backbone, _, View, Lang, languageModule,
 	var AppRouter = Backbone.Router.extend({
 		routes: {
 			'': 'index',
-			'clinics': 'clinics'
+			'clinics': 'clinics',
+			'account/clinic': 'accountClinic'
 		},
 	});
 	
-	//console.log(languageModule);
-	//console.log(languageModule);
 	// Initiate the router
 	var app_router = new AppRouter;
 	
@@ -50,6 +49,19 @@ function($, Backbone, _, View, Lang, languageModule,
 	
 	app_router.on('route:home', function(){
 		console.log("token");
+	});
+	
+	app_router.on('route:accountClinic', function(){
+		View.render(new Master2Layout);
+		View.render(new Header2Layout({el: "#appContent"}));
+		
+		
+		var test = require(['views/user/clinic_account'], function(res){
+			View.forceRender(new res({el: "#appContent"}));
+		});
+		
+		//console.log(new test);
+		//View.forceRender(new )
 	});
 	
 	
