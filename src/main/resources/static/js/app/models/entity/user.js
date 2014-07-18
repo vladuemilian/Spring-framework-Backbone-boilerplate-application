@@ -4,9 +4,15 @@ define(['jquery', 'underscore', 'backbone'
 
 
 	var User = Backbone.Model.extend({
-		url: '/api/' + API_VERSION + '/user'
+		url: '/api/v' + API_VERSION + '/user',
+		
+		getApiParams: function(){
+			return {
+				'username': 'test',
+				'password': 'blabla'
+			}
+		}
 	});
-	
 	
 	return User;
 	

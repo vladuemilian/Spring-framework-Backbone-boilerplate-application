@@ -25,9 +25,6 @@ requirejs.config({
 
 	shim:
 	{
-		'backbone': {
-			deps:['underscore', 'jquery']
-		},
 		'jquery': {
 			exports: '$'
 		},
@@ -39,8 +36,28 @@ requirejs.config({
 		{
 			deps:['jquery'],
 			exports: '$'
+		},
+		
+		'backbone':{
+			exports: 'Backbone',
+			deps: ['underscore']
 		}
+	},
+	
+	map: {
+		
+		'core/backbone-overrided': {
+			'backbone':'backbone'
+		},
+	
+		'*': {
+			'backbone' : 'core/backbone-overrided' 
+		},
+		
+
 	}
+	
+	
 });
 
 require(['router'],
