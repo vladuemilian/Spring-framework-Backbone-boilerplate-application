@@ -1,3 +1,20 @@
+<style>
+	.error{
+		color:red;
+	}
+	.margin-top-20{
+		margin-top:20px;	
+	}
+	.search-block {
+padding: 80px 0;
+text-align: center;
+position: relative;
+margin-bottom: 20px;
+background: url(/assets/img/clinicd.jpg) 50% 0 repeat fixed;
+}
+</style>
+<div class="search-block parallaxBg" style="background-position: 50% 306px;"></div>
+
 <div class="breadcrumbs">
 	<div class="container">
 		<h1 class="pull-left">Clinic Account</h1>
@@ -17,12 +34,10 @@
                         <h2><%= lang.account.login_message %></h2>
                     </div>
 
-                    <div class="input-group margin-bottom-20">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" placeholder="Email" class="form-control" name="username">
+                    <div class="margin-bottom-20">
+                        <input type="email" placeholder="Email" class="form-control" name="username">
                     </div>                    
-                    <div class="input-group margin-bottom-20">
-                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <div class="margin-bottom-20">
                         <input type="password" placeholder="Password" class="form-control" name="password">
                     </div>                    
 
@@ -35,6 +50,18 @@
                         </div>
                     </div>
 
+					<div id="alertStatus" style="margin-top:10px">
+						<div class="alert alert-info fade in" id="alertBeforeLogin" style="display:none;">
+	                         <strong>Loading!</strong> Your request is proccessing. Please wait!
+    	                </div>
+    	                <div class="alert alert-success fade in" id="alertSuccessLogin" style="display:none">
+                            <strong>Login successfully!</strong> You will be redirected in a moment.
+                        </div>
+                       <div class="alert alert-danger fade in" id="alertFailLogin" style="display:none">
+                            <strong>Login failed!</strong> Please try again! 
+                       </div> 
+                    </div>
+                    
                     <hr>
 
                     <h4><%= lang.account.login_forgot %></h4>
@@ -42,35 +69,46 @@
                 </form>            
             </div>
 		<div class="col-md-6 col-sm-8 ">
-			<form class="reg-page">
+			<form class="reg-page" id="registerForm" method="POST" action="/api/v1.0/user/clinic">
 				<div class="reg-header">
 					<h2><%= lang.account.register_message %></h2>
 					<p>
-						
 					</p>
 				</div>
 
 
 
-				<label><%= lang.account.register_email %> <span class="color-red">*</span></label> <input
-					type="text" class="form-control margin-bottom-20">
+				<label class=""><%= lang.account.register_email %> <span class="color-red">*</span></label> <input
+					type="email" class="form-control" required>
 
-				<div class="row">
+				<div class="row margin-top-20">
 					<div class="col-sm-6">
 						<label><%= lang.account.register_password %> <span class="color-red">*</span></label> <input
-							type="password" class="form-control margin-bottom-20">
+							type="password" name="register_password" id="register_password" class="form-control" required>
 					</div>
 					<div class="col-sm-6">
 						<label><%= lang.account.register_cpassword %> <span class="color-red">*</span></label> <input
-							type="password" class="form-control margin-bottom-20">
+							type="password" name="register_cpassword" class="form-control" equalTo="register_password">
 					</div>
 				</div>
 
 
-					<label><%= lang.account.register_cabinet_name %> <span class="color-red">*</span></label> <input type="text" class="form-control margin-bottom-20"> 
-					<label><%= lang.account.register_address %> <span class="color-red">*</span></label> <input type="text" class="form-control margin-bottom-20">
-					<label><%= lang.account.register_phone %> <span class="color-red">*</span></label> <input type="text" class="form-control margin-bottom-20">
-					<label>Website </label> <input type="text" class="form-control margin-bottom-20">
+					<label class="margin-top-20"><%= lang.account.register_cabinet_name %> <span class="color-red">*</span></label> <input type="text" class="form-control" name="cabinetName" required minlength="2"> 
+					<div class="row">
+						<div class="col-sm-12">
+							<label class="margin-top-20"><%= lang.account.register_address %> <span class="color-red">*</span></label> <input type="text" class="form-control" name="address" required>
+						</div>
+					</div>					
+					<div class="row">
+						<div class="col-sm-12">				
+							<label class="margin-top-20"><%= lang.account.register_phone %> <span class="color-red">*</span></label> <input type="text" class="form-control" name="phone" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">								
+							<label class="margin-top-20">Website </label> <input type="url" class="form-control" name="website">
+						</div>
+					</div>
 
 				<hr>
 
@@ -81,7 +119,7 @@
 						</label>
 					</div>
 					<div class="col-lg-6 text-right">
-						<button class="btn-u" type="button" id="registerButton"><%= lang.account.register_button %></button>
+						<button class="btn-u" type="submit" id="registerButton"><%= lang.account.register_button %></button>
 					</div>
 				</div>
 			</form>

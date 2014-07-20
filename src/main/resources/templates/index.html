@@ -48,20 +48,20 @@
 
 <style>
 .bgc{
-	background: url("/assets/img/patterns/15.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 
 .centered{
 	position:absolute;
 	top:50%;
 	left:50%;
-	margin-top:-75px;
-	margin-left:-75px;
+	margin-top:-25px;
+	margin-left:-25px;
 }
 </style>
 
+
 </head>
-<body class="boxed-layout" style="box-shadow:none;">
+<body class="" style="box-shadow:none;">
 	<script th:inline="javascript">
 		var app_vars = 
 		{
@@ -73,8 +73,11 @@
 	</script>
 
 	<div id="container">
-	<img src="/assets/img/loading.gif" class="centered"/>		
+		<img src="/assets/img/loading.gif" class="centered" />		
 	</div>
+	
+	<img src="/assets/img/loading.gif" class="centered" id="loader" style="display:none;"/>		
+	
 	<script data-main="/js/bootstrap" src="/js/lib/require.min.js"></script>
 </body>
 </html>

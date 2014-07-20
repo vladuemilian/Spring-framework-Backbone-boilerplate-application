@@ -1,6 +1,6 @@
-define(['jquery','backbone','underscore', 'core/view', 'core/lang', 'models/language/language',
+define(['jquery','backbone','underscore', 'core/view', 'core/lang', 'models/language/language', 'core/app',
         'views/layouts/master2', 'views/layouts/header/header', 'views/layouts/index'],
-function($, Backbone, _, View, Lang, languageModule,
+function($, Backbone, _, View, Lang, languageModule, App,
 		 Master2Layout, Header2Layout, IndexLayout
 		)
 {
@@ -52,18 +52,20 @@ function($, Backbone, _, View, Lang, languageModule,
 	});
 	
 	app_router.on('route:accountClinic', function(){
+		//load the contianer, header and other dependencies
 		View.render(new Master2Layout);
 		View.render(new Header2Layout({el: "#appContent"}));
-		
-		
-		var test = require(['views/user/clinic_account'], function(res){
+	
+		//load the main view
+		require(['views/user/clinic_account'], function(res){
 			View.forceRender(new res({el: "#appContent"}));
 		});
 		
-		//console.log(new test);
-		//View.forceRender(new )
 	});
 	
+
+	//register this router into app routers
+	App.router.register("appRouter", app_router);
 	
 	return AppRouter;
 });

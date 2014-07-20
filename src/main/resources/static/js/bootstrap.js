@@ -13,11 +13,12 @@ requirejs.config({
 	//never includes a ".js" extension since
 	//the paths config could be for a directory.
 	paths: {
-		lib: 'js/lib',
+		lib: '/js/lib',
 		jquery: '/js/lib/jquery',
 		underscore: '/js/lib/underscore.min',
 		backbone: '/js/lib/backbone.min',
-		bootstrap: '/js/lib/boostrap.min',	
+		backbonePaginator: '/js/lib/backbone.paginator.min',
+		bootstrap: '/js/lib/boostrap.min',
 		ajaxform: '/js/lib/ajaxform',
 		text: '/js/lib/text',
 		templates:'../../templates'
@@ -41,6 +42,11 @@ requirejs.config({
 		'backbone':{
 			exports: 'Backbone',
 			deps: ['underscore']
+		},
+		
+		'backbonePaginator': {
+			exports: 'Backbone',
+			deps: ['backbone']
 		}
 	},
 	

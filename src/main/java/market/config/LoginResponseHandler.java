@@ -20,7 +20,7 @@ public class LoginResponseHandler implements AuthenticationSuccessHandler, Authe
 			ServletException {
 		
 		response.setContentType("application/json");
-		response.getWriter().write("{\"status\": \"true\"}");
+		response.getWriter().write("{\"status\": true}");
 	}
 
 	@Override
@@ -30,6 +30,6 @@ public class LoginResponseHandler implements AuthenticationSuccessHandler, Authe
 		// TODO Auto-generated method stub
 		
 		response.setContentType("application/json");
-		response.getWriter().write("{\"status\": \"false\"}");
+		response.getWriter().write("{\"status\": false}");
 	}
 }

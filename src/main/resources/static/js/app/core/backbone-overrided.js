@@ -1,4 +1,4 @@
-define("core/backbone-overrided", ["jquery","underscore","backbone"], function($, _, Backbone) {
+define("core/backbone-overrided", ["jquery", "underscore","backbone"], function($, _, Backbone) {
 	var oldSync = Backbone.sync;
 	
 	Backbone.sync = function(method, model, options) {
