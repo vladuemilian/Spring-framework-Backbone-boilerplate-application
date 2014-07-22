@@ -9,7 +9,8 @@
 			<ul class="loginbar pull-right">
 				<li><i class="fa fa-globe"></i> <a><%= langs.msg("menu_languages") %></a>
 					<ul class="lenguages">
-						
+
+
 <% 
 	langs.each(function(lang){
 		%> 
@@ -18,12 +19,23 @@
 		<%
 	});
 %>
-
 					</ul></li>
+<% if(! Auth.check()){ %>
 				<li class="topbar-devider"></li>
 				<li><a href="/account/clinic"><%= langs.msg("menu_clinic_account") %></a></li>
 				<li class="topbar-devider"></li>
 				<li><a href="/account/client"><%= langs.msg("menu_client_account") %></a></li>
+<% } else { %>
+<li class="topbar-devider"></li>
+	<li>
+       <i class="fa fa-user"></i>
+       <a>Username</a>
+       <ul class="lenguages">
+			<li><a href="#">Account</a></li>
+			<li><a href="/logout">Logout</a></li>
+        </ul>
+    </li>
+<% } %>				
 			</ul>
 			<!-- End Topbar Navigation -->
 		</div>

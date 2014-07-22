@@ -1,11 +1,13 @@
 define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery.validate.min', 'core/app',
         'text!templates/user/clinic_account.html',
-        'models/language/language', 'models/entity/user'
+        'models/language/language', 'models/entity/user',
+        'core/view'
         ], 
         function(
         		$, _, Backbone, ajaxForm, Auth, jQueryValidate, App,
         		clinicTemplate,
-        		language, User
+        		language, User,
+        		View
         		){
 
 	var AppView = Backbone.View.extend({
@@ -34,12 +36,11 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 			//todo - check if obj has a property
 			//for rendering again the template ( _.template() ) - called
 			//by the language module
-			var temp = _.template(clinicTemplate, {lang: language.getLanguageObject() });
+			var temp = _.template(clinicTemplate, {lang: language.getLanguageObject(), Auth: Auth });
 			
 			this.$el.html(temp);
 			
-
-			
+			//validate the register form
 			$("#registerForm").validate({
 				rules:{
 					phone: {
@@ -47,7 +48,7 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 					} 
 				}
 			});
-			
+			//validate the login form
 			$("#loginForm").validate({
 				rules: {
 					username: {
@@ -87,6 +88,8 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 			//were correct
 			if(status==true){
 				$("#alertSuccessLogin").show();
+				Auth.absoluteCheck();
+				View.renderAll({forceStatic: true});
 				App.router.get("appRouter").navigate("/", {trigger: true});
 			} else {
 				$("#alertFailLogin").show();

@@ -8,7 +8,8 @@ function($, Backbone, _, View, Lang, languageModule, App,
 		routes: {
 			'': 'index',
 			'clinics': 'clinics',
-			'account/clinic': 'accountClinic'
+			'account/clinic': 'accountClinic',
+			'logout': 'logout'
 		},
 	});
 	
@@ -20,6 +21,9 @@ function($, Backbone, _, View, Lang, languageModule, App,
 	});
 	
 	app_router.on('route:clinics', function(actions){
+		
+		//set the page title 
+		document.title = "Clinics Browsing";
 
 		var lang = languageModule.getCurrentLanguage();
 	
@@ -31,6 +35,9 @@ function($, Backbone, _, View, Lang, languageModule, App,
 	});
 	
 	app_router.on('route:index', function(lang){
+		//set title
+		document.title = "Dentists Application";
+		
 		View.render(new Master2Layout);
 		View.render(new Header2Layout({el: ".wrapper"}));
 	
@@ -52,6 +59,9 @@ function($, Backbone, _, View, Lang, languageModule, App,
 	});
 	
 	app_router.on('route:accountClinic', function(){
+		//setting title
+		document.title = "Clinic Account";
+		
 		//load the contianer, header and other dependencies
 		View.render(new Master2Layout);
 		View.render(new Header2Layout({el: "#appContent"}));
@@ -63,6 +73,9 @@ function($, Backbone, _, View, Lang, languageModule, App,
 		
 	});
 	
+	app_router.on('route:logout', function(){
+		window.location = app_vars.base_url + "/logout";
+	});
 
 	//register this router into app routers
 	App.router.register("appRouter", app_router);

@@ -6,7 +6,11 @@ define(['jquery', 'underscore'
 		
 		renderedViews: [],
 		currentView: null,
-			
+
+		/**
+		 * 
+		 * 
+		 */
 		render: function(v)
 		{
 			if(this.getViewById(v.vid)!=null){
@@ -17,7 +21,12 @@ define(['jquery', 'underscore'
 			
 			v.render();
 		},
-		
+	
+		/**
+		 * 
+		 * 
+		 * 
+		 */
 		forceRender: function(v){
 			/*
 			if(this.getViewById(v.vid)==null){
@@ -28,7 +37,12 @@ define(['jquery', 'underscore'
 			
 			v.render();
 		},
-		
+	
+		/**
+		 * 
+		 * 
+		 * @param opt: forceStatic 
+		 */
 		renderAll: function(opt)
 		{
 			_.each(this.renderedViews, function(view){

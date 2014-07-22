@@ -16,7 +16,7 @@ define(['jquery', 'underscore'
 			
 			var status = $.ajax({
 				type: "GET",
-				url: '/api/' + API_VERSION + '/user/auth/check',
+				url: '/api/v' + API_VERSION + '/user/auth/check',
 				async: false
 			}).responseJSON.status;
 		

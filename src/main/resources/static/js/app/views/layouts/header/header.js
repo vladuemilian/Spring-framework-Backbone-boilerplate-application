@@ -1,10 +1,10 @@
 define(['jquery', 'underscore', 'backbone',
-        'models/language/language', 'core/view',
+        'models/language/language', 'core/view', 'core/auth',
         'text!templates/layouts/header/header2.html'
         ], 
         function(
         		$, _, Backbone,
-        		language, View,
+        		language, View, Auth,
         		headerTemplate
         		){
 	
@@ -34,7 +34,7 @@ define(['jquery', 'underscore', 'backbone',
 			//to do - more work here
 			this.setElement("#appHeader");
 			
-			var temp = _.template(headerTemplate, {langs: language});
+			var temp = _.template(headerTemplate, {langs: language, Auth: Auth});
 			
 			this.$el.html(temp);
 		},
