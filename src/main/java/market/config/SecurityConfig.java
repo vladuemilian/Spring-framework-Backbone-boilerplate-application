@@ -21,6 +21,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 	@Autowired
 	private LoginResponseHandler loginResponseHandler;
 	
+	@Autowired
+	private LogoutHandler logoutHandler;
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -39,6 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 			//.anyRequest().authenticated()
 			.antMatchers("/api/**").authenticated()
 			.and()
+		.logout().logoutSuccessHandler(logoutHandler).and()
 		.formLogin()
 			.loginPage("/user/login")
 			.successHandler(loginResponseHandler)

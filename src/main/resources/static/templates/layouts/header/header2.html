@@ -29,7 +29,7 @@
 <li class="topbar-devider"></li>
 	<li>
        <i class="fa fa-user"></i>
-       <a>Username</a>
+       <a><%= Auth.user().get("username") %></a>
        <ul class="lenguages">
 			<li><a href="#">Account</a></li>
 			<li><a href="/logout">Logout</a></li>
@@ -60,6 +60,8 @@
 
 					<!-- Pages -->
 					<li class=""><a href="/clinics"><%= langs.msg("menu_clinics") %></a></li>
+					<li class=""><a href="/promotions">Promotions</a></li>
+					<li class=""><a href="/reviews">Reviews</a></li>
 					<!-- Features -->
 					<li class=""><a href="/contact">Contact</a></li>
 				</ul>

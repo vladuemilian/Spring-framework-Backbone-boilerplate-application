@@ -37,6 +37,11 @@ define(['jquery', 'underscore', 'backbone',
 			var temp = _.template(headerTemplate, {langs: language, Auth: Auth});
 			
 			this.$el.html(temp);
+			
+			$(".navbar-nav li").click(function(e){
+				$(".navbar-nav li").removeClass("active");
+				$(this).addClass("active");
+			});
 		},
 	
 		//view unique id

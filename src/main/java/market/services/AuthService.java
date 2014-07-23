@@ -48,6 +48,7 @@ public class AuthService extends AbstractUserDetailsAuthenticationProvider
 		//User user = new User("asdf", "asdf", roles);
 	
 		User user = new User();
+		user.setId("1011010101");
 		user.setUsername("sorin@pc.com");
 		user.setPassword(password);
 		

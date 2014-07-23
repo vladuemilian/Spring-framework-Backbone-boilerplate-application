@@ -1,7 +1,9 @@
 define(['jquery','backbone','underscore', 'core/view', 'core/lang', 'models/language/language', 'core/app',
-        'views/layouts/master2', 'views/layouts/header/header', 'views/layouts/index'],
+        'views/layouts/master2', 'views/layouts/header/header', 'views/layouts/index',
+        'core/auth'],
 function($, Backbone, _, View, Lang, languageModule, App,
-		 Master2Layout, Header2Layout, IndexLayout
+		 Master2Layout, Header2Layout, IndexLayout,
+		 Auth
 		)
 {
 	var AppRouter = Backbone.Router.extend({
@@ -11,6 +13,14 @@ function($, Backbone, _, View, Lang, languageModule, App,
 			'account/clinic': 'accountClinic',
 			'logout': 'logout'
 		},
+		
+		initialize: function(){
+			this.bind("all", this.onChange);
+		},
+		
+		onChange: function(){
+			//console.log("Route changed!!!!");
+		}
 	});
 	
 	// Initiate the router
@@ -19,7 +29,22 @@ function($, Backbone, _, View, Lang, languageModule, App,
 	app_router.on('route:itemRoute', function(actions){
 		console.log(actions);
 	});
-	
+
+	/**
+	 * @brief the before route event, triggered on route change 
+	 *
+	 * @match /**
+	 */
+	app_router.on('route', function(r){
+		console.log("triggered once!!");
+		//$("#appContent").html('<img src="/assets/img/loading.gif" class="centered" />');
+	});
+
+	/**
+	 * @brief the list with clinics 
+	 * 
+	 * @match /clinics
+	 */
 	app_router.on('route:clinics', function(actions){
 		
 		//set the page title 
@@ -30,10 +55,17 @@ function($, Backbone, _, View, Lang, languageModule, App,
 		View.render(new Master2Layout);
 		View.render(new Header2Layout({el: "#appLayout"}));
 		
-		$("#appContent").html("<h1>Hello world!</h1>");
-		//View.renderAll();
-	});
 	
+		require(['views/clinics'], function(view){
+			View.forceRender(new view({el: "#appContent"}))
+		});
+	});
+
+	/**
+	 * @brief the homepage 
+	 * 
+	 * @match / 
+	 */
 	app_router.on('route:index', function(lang){
 		//set title
 		document.title = "Dentists Application";
@@ -74,7 +106,13 @@ function($, Backbone, _, View, Lang, languageModule, App,
 	});
 	
 	app_router.on('route:logout', function(){
-		window.location = app_vars.base_url + "/logout";
+		//window.location = app_vars.base_url + "/logout";
+		$.get("/logout", function(){
+			Auth.absoluteCheck();
+			//window.location = "/";	
+			View.renderAll();
+			App.router.get("appRouter").navigate("/", {trigger: true});	
+		});
 	});
 
 	//register this router into app routers

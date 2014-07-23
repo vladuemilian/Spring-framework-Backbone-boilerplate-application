@@ -19,8 +19,6 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 	
 		
 		sampleTest: function(){
-			//var test = Auth.check();
-			
 			var user = new User({username: 'sample', clinic_name: 'blabla'});
 			
 			//user.fetch();
@@ -45,7 +43,10 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 				rules:{
 					phone: {
 						digits:true
-					} 
+					},
+					register_cpassword: {
+						equalTo: 'register_password'
+					}
 				}
 			});
 			//validate the login form
@@ -69,6 +70,11 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 				*/
 				success: this.login,
 				beforeSubmit: this.loginBefore
+			});
+			
+			//ajax form for register
+			$("#registerForm").ajaxForm({
+				//todo - handlers
 			});
 		},
 	

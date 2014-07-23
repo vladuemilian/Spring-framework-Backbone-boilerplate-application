@@ -86,4 +86,9 @@ public class User implements UserInterface, UserDetails
 	{
 		return this.id;
 	}
+	
+	//this method will be deleted - created only for testing purposes
+	public void setId(String id){
+		this.id = id;
+	}
 }

@@ -28,81 +28,92 @@
     <script src="<%= app_vars.base_url%>/assets/plugins/respond.js"></script>
 <![endif]-->
 
-
-<div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 md-margin-bottom-40">
+<div class="footer-v2">
+        <div class="footer">
+            <div class="container">
+                <div class="row">
                     <!-- About -->
-                    <div class="headline"><h2>About</h2></div>  
-                    <p class="margin-bottom-25 md-margin-bottom-40">Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals.</p>    
+                    <div class="col-md-3 md-margin-bottom-40">
+                        <a href="index.html"><img class="footer-logo" src="assets/img/logo1-default.png" alt=""></a>
+                        <p class="margin-bottom-20">Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals.</p>
+
+                        <form class="footer-subsribe">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Email Address">                            
+                                <span class="input-group-btn">
+                                    <button class="btn-u" type="button">Go</button>
+                                </span>
+                            </div>                  
+                        </form>                         
+                    </div><!--/col-md-3-->
                     <!-- End About -->
+                    
+                    <!-- Link List -->
+                    <div class="col-md-3 md-margin-bottom-40">
+                        <div class="headline"><h2>Useful Links</h2></div>
+                        <ul class="list-unstyled link-list">
+                            <li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="#">Portfolio</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="#">Latest jobs</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
+                        </ul>
+                    </div><!--/col-md-3-->
+                    <!-- End Link List -->                   
 
-                    <!-- Monthly Newsletter -->
-                    <div class="headline"><h2>Monthly Newsletter</h2></div> 
-                    <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
-                    <form class="footer-subsribe">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Email Address">                            
-                            <span class="input-group-btn">
-                                <button class="btn-u" type="button">Subscribe</button>
-                            </span>
-                        </div>                  
-                    </form>                         
-                    <!-- End Monthly Newsletter -->
-                </div><!--/col-md-4-->  
-                
-                <div class="col-md-4 md-margin-bottom-40">
-                    <!-- Recent Blogs -->
-                    <div class="posts">
-                        <div class="headline"><h2>Stories</h2></div>
-                        <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="/assets/img/sliders/elastislide/6.jpg" alt=""></a></dt>
-                            <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-                            </dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="/assets/img/sliders/elastislide/10.jpg" alt=""></a></dt>
-                            <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-                            </dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="/assets/img/sliders/elastislide/11.jpg" alt=""></a></dt>
-                            <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-                            </dd>
-                        </dl>
+                    <!-- Latest Tweets -->
+                    <div class="col-md-3 md-margin-bottom-40">
+                        <div class="latest-tweets">
+                            <div class="headline"><h2 class="heading-sm">Latest Tweets</h2></div>
+                            <div class="latest-tweets-inner">
+                                <i class="fa fa-twitter"></i>
+                                <p>
+                                    <a href="#">@htmlstream</a> 
+                                    At vero seos etodela ccusamus et 
+                                    <a href="#">http://t.co/sBav7dm</a> 
+                                    <small class="twitter-time">2 hours ago</small>
+                                </p>    
+                            </div>
+                            <div class="latest-tweets-inner">
+                                <i class="fa fa-twitter"></i>
+                                <p>
+                                    <a href="#">@htmlstream</a> 
+                                    At vero seos etodela ccusamus et 
+                                    <a href="#">http://t.co/sBav7dm</a> 
+                                    <small class="twitter-time">4 hours ago</small>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- End Recent Blogs -->                    
-                </div><!--/col-md-4-->
+                    <!-- End Latest Tweets -->    
 
-                <div class="col-md-4">
-                    <!-- Contact Us -->
-                    <div class="headline"><h2>Contact Us</h2></div> 
-                    <address class="md-margin-bottom-40">
-                        25, Lorem Lis Street, Orange <br>
-                        California, US <br>
-                        Phone: 800 123 3456 <br>
-                        Fax: 800 123 3456 <br>
-                        Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
-                    </address>
-                    <!-- End Contact Us -->
+                    <!-- Address -->
+                    <div class="col-md-3 md-margin-bottom-40">
+                        <div class="headline"><h2 class="heading-sm">Contact Us</h2></div>                         
+                        <address class="md-margin-bottom-40">
+                            <i class="fa fa-home"></i>25, Lorem Lis Street, California, US <br>
+                            <i class="fa fa-phone"></i>Phone: 800 123 3456 <br>
+                            <i class="fa fa-globe"></i>Website: <a href="#">www.htmlstream.com</a> <br>
+                            <i class="fa fa-envelope"></i>Email: <a href="mailto:info@anybiz.com">info@anybiz.com</a> 
+                        </address>
 
-                    <!-- Social Links -->
-                    <div class="headline"><h2>Stay Connected</h2></div> 
-                    <ul class="social-icons">
-                        <li><a href="#" data-original-title="Feed" class="social_rss"></a></li>
-                        <li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
-                        <li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
-                        <li><a href="#" data-original-title="Goole Plus" class="social_googleplus"></a></li>
-                        <li><a href="#" data-original-title="Pinterest" class="social_pintrest"></a></li>
-                        <li><a href="#" data-original-title="Linkedin" class="social_linkedin"></a></li>
-                        <li><a href="#" data-original-title="Vimeo" class="social_vimeo"></a></li>
-                    </ul>
-                    <!-- End Social Links -->
-                </div><!--/col-md-4-->
-            </div>
-        </div> 
+                        <!-- Social Links -->
+                        <ul class="social-icons">
+                            <li><a href="#" data-original-title="Facebook" class="rounded-x social_facebook"></a></li>
+                            <li><a href="#" data-original-title="Twitter" class="rounded-x social_twitter"></a></li>
+                            <li><a href="#" data-original-title="Goole Plus" class="rounded-x social_googleplus"></a></li>
+                            <li><a href="#" data-original-title="Linkedin" class="rounded-x social_linkedin"></a></li>
+                        </ul>
+                        <!-- End Social Links -->
+                    </div><!--/col-md-3-->
+                    <!-- End Address -->
+                </div>
+            </div> 
+        </div><!--/footer-->
+
+        <div class="copyright">
+            <div class="container">
+                <p class="text-center">2014 © All Rights Reserved. Unify Theme by <a target="_blank" href="https://twitter.com/htmlstream">Htmlstream</a></p>
+            </div> 
+        </div><!--/copyright--> 
     </div>
