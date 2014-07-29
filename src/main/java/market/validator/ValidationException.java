@@ -1,4 +1,4 @@
-package market.models.services.user;
+package market.validator;
 
 import java.util.List;
 

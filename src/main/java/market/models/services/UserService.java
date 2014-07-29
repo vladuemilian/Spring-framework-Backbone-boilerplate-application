@@ -1,10 +1,10 @@
-package market.models.services.user;
+package market.models.services;
 
-import market.models.services.ServiceException;
-import market.models.user.AccountInterface;
-import market.models.user.User;
-import market.models.user.UserRepositoryInterface;
-import market.user.models.validator.UserValidatorInterface;
+import market.models.domain.user.AccountInterface;
+import market.models.domain.user.User;
+import market.models.repository.UserRepository;
+import market.validator.UserValidatorInterface;
+import market.validator.ValidationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,10 +13,10 @@ import org.springframework.validation.DataBinder;
 import org.springframework.validation.Validator;
 
 @Component
-public class UserService implements UserServiceInterface{
+public class UserService{
 
 	@Autowired 
-	private UserRepositoryInterface userRepo;
+	private UserRepository userRepo;
 	
 	@Autowired
 	@Qualifier("UserValidator")

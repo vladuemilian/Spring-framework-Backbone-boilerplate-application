@@ -12,21 +12,11 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 
 	var AppView = Backbone.View.extend({
 		
-		events: {
-			//'click #registerButton': 'sampleTest',
-		},
-		
-	
-		
 		sampleTest: function(){
 			var user = new User({username: 'sample', clinic_name: 'blabla'});
 			
 			//user.fetch();
 			user.save();
-			
-		},
-		
-		initialize: function(){
 		},
 		
 		render: function(obj)
@@ -45,10 +35,11 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 						digits:true
 					},
 					register_cpassword: {
-						equalTo: 'register_password'
+						equalTo: '#register_password'
 					}
 				}
 			});
+			
 			//validate the login form
 			$("#loginForm").validate({
 				rules: {
@@ -63,18 +54,15 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 			
 			//create handlers
 			$("#loginForm").ajaxForm({
-				/*
-				success: function(responseText, statusText, xhr){
-					console.log(responseText.status);
-				}
-				*/
-				success: this.login,
+				success: this.loginSuccess,
 				beforeSubmit: this.loginBefore
 			});
 			
 			//ajax form for register
 			$("#registerForm").ajaxForm({
-				//todo - handlers
+				success: this.registerSuccess,
+				beforeSubmit: this.registerBefore
+				
 			});
 		},
 	
@@ -83,7 +71,7 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 		 * sent - the status of loging will be checked inside 
 		 * 
 		 */
-		login: function(responseText, statusText, xhr){
+		loginSuccess: function(responseText, statusText, xhr){
 			var status = responseText.status;
 		
 			$("#alertBeforeLogin").hide();
@@ -113,6 +101,24 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 			$(".alert").hide();
 			
 			$("#alertBeforeLogin").show();
+		},
+		
+		/**
+		 * 
+		 */
+		registerSuccess: function(responseText, statusText, xhr){
+		
+			$(".alert").hide();
+			$("#alertSuccessRegister").show();
+		},
+		
+		/**
+		 * 
+		 * 
+		 */
+		registerBefore: function(){
+			$(".alert").hide();
+			$("#alertBeforeRegister").show();
 		},
 		
 		vid: 'layouts/user/clinic_template'

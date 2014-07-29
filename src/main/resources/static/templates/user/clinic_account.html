@@ -122,6 +122,18 @@ background: url(/assets/img/clinicd.jpg) 50% 0 repeat fixed;
 						<button class="btn-u" type="submit" id="registerButton"><%= lang.account.register_button %></button>
 					</div>
 				</div>
+				
+				<div id="alertStatusRegister" style="margin-top:10px">
+						<div class="alert alert-info fade in" id="alertBeforeRegister" style="display:none;">
+	                         <strong>Loading!</strong> Your request is proccessing. Please wait!
+    	                </div>
+    	                <div class="alert alert-success fade in" id="alertSuccessRegister" style="display:none">
+                            <strong>Your account has been created!</strong> Please login now.
+                        </div>
+                       <div class="alert alert-danger fade in" id="alertFailRegister" style="display:none">
+                            <strong>Register failed!</strong> Please try again! 
+                       </div> 
+                    </div>
 			</form>
 		</div>
 	</div>

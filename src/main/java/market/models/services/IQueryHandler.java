@@ -1,4 +1,4 @@
-package market.models.services.cqs;
+package market.models.services;
 
 public interface IQueryHandler<TQuery, TResult> {
 

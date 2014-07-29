@@ -1,6 +1,6 @@
 package market.controllers;
 
-import market.models.services.user.ValidationException;
+import market.validator.ValidationException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

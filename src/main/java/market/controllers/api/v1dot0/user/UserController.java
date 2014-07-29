@@ -3,9 +3,9 @@ package market.controllers.api.v1dot0.user;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import market.models.services.user.UserService;
-import market.models.services.user.ValidationException;
-import market.models.user.User;
+import market.models.domain.user.User;
+import market.models.services.UserService;
+import market.validator.ValidationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;

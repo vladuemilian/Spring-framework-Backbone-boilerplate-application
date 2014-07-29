@@ -69,10 +69,11 @@ function($, Backbone, _, View, Lang, languageModule, App,
 	app_router.on('route:index', function(lang){
 		//set title
 		document.title = "Dentists Application";
+
 		
 		View.render(new Master2Layout);
 		View.render(new Header2Layout({el: ".wrapper"}));
-	
+		
 		//View.render(new IndexLayout);
 		View.forceRender(new IndexLayout({el: "#appContent"}));
 	});

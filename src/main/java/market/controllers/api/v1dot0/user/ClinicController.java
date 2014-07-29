@@ -1,7 +1,7 @@
 package market.controllers.api.v1dot0.user;
 
-import market.models.user.account.clinic.Clinic;
-import market.models.user.account.clinic.ClinicRepositoryInterface;
+import market.models.domain.clinic.Clinic;
+import market.models.repository.ClinicRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @ResponseBody
-public class ClincController {
+public class ClinicController {
 	
 	public static enum Status {
 		NEW,
@@ -26,7 +26,7 @@ public class ClincController {
 	}
 	
 	@Autowired
-	ClinicRepositoryInterface clinicRepo;
+	ClinicRepository clinicRepo;
 	
 	@RequestMapping(value="/api/v1.0/user/{userId}/clinic", method=RequestMethod.POST)
 	public Clinic postClinic(
@@ -38,8 +38,6 @@ public class ClincController {
 			@RequestParam(value="website", required=false) String website
 			)
 	{
-
-		
 		Clinic clinic = new Clinic();
 		clinic.setCabinet(cabinet);
 		clinic.setAddress(address);
@@ -51,5 +49,4 @@ public class ClincController {
 		
 		return clinic;
 	}
-	
 }

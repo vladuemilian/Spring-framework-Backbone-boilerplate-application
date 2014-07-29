@@ -1,7 +1,7 @@
-package market.user.models.validator;
+package market.validator;
 
-import market.models.user.User;
-import market.models.user.UserRepositoryInterface;
+import market.models.domain.user.User;
+import market.models.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import org.springframework.validation.Validator;
 public class UserValidator implements Validator, UserValidatorInterface {
 
 	@Autowired
-	UserRepositoryInterface userRepo;
+	UserRepository userRepo;
 	
 	@Override
 	public boolean supports(Class<?> obj) {

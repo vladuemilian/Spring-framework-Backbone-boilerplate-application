@@ -1,4 +1,4 @@
-package market.models.user;
+package market.models.domain.user;
 
 import org.springframework.security.core.GrantedAuthority;
 

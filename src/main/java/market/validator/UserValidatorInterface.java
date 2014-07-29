@@ -1,4 +1,4 @@
-package market.user.models.validator;
+package market.validator;
 
 
 public interface UserValidatorInterface {
