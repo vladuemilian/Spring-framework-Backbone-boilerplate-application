@@ -1,7 +1,7 @@
 package market.validator;
 
-import market.models.domain.user.User;
-import market.models.repository.UserRepository;
+import market.domain.user.User;
+import market.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

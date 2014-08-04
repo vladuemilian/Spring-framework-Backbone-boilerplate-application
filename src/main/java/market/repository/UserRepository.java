@@ -1,7 +1,7 @@
-package market.models.repository;
+package market.repository;
 
-import market.models.domain.user.User;
-import market.models.domain.user.UserInterface;
+import market.domain.user.User;
+import market.domain.user.UserInterface;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

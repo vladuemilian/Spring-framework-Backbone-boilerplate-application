@@ -1,4 +1,4 @@
-package market.models.domain.user;
+package market.domain.user;
 
 import java.util.Collection;
 

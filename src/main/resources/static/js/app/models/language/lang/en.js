@@ -10,7 +10,14 @@ define(['jquery'],
 		
 		search_for: "Search for Clinics",
 		search_for_text: "Search for Clinics, e.g: Dental Implant in Los Angeles",
-			
+		
+		
+		menu: {
+			home: "Home",
+			clinics: "Clinics",
+			promotions: "Promotions",
+			reviews: "Reviews"
+		},
 			
 		account: {
 			login_message: "Login with your account",
@@ -28,7 +35,11 @@ define(['jquery'],
 			register_cabinet_name: "Cabinet Name",
 			register_terms: "I read <a href\"#\" class=\"color-green\"> Terms and Conditions </a>",
 			register_button: "Register"
-		}	
+		},
+	
+		index: {
+			slogan: "We bring european patients to romanian dentists and to other eastern countries"
+		}
 			
 	};
 	

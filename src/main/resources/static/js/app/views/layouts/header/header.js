@@ -34,7 +34,7 @@ define(['jquery', 'underscore', 'backbone',
 			//to do - more work here
 			this.setElement("#appHeader");
 			
-			var temp = _.template(headerTemplate, {langs: language, Auth: Auth});
+			var temp = _.template(headerTemplate, {langs: language, lang: language.getLanguageObject(), Auth: Auth});
 			
 			this.$el.html(temp);
 			

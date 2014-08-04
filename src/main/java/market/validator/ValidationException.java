@@ -2,13 +2,17 @@ package market.validator;
 
 import java.util.List;
 
-import market.models.services.ServiceException;
+import market.services.ServiceException;
 
-import org.springframework.stereotype.Component;
 import org.springframework.validation.DataBinder;
 
 public class ValidationException extends ServiceException{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	DataBinder dataBinder;
 	
 	public ValidationException(DataBinder dataBinder)

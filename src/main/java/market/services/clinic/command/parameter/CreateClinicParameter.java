@@ -1,6 +1,6 @@
-package market.models.services.clinic;
+package market.services.clinic.command.parameter;
 
-public class CreateClinicQuery {
+public class CreateClinicParameter{
 
 	private String email;
 	private String password;
@@ -11,7 +11,7 @@ public class CreateClinicQuery {
 	private String website;
 	
 	
-	public CreateClinicQuery(String email, String password,
+	public CreateClinicParameter(String email, String password,
 			String passwordConfirmation, String cabinetName, String address,
 			String phone) {
 		super();
@@ -23,7 +23,7 @@ public class CreateClinicQuery {
 		this.phone = phone;
 	}
 	
-	public CreateClinicQuery(){
+	public CreateClinicParameter(){
 	}
 	
 	public String getEmail() {

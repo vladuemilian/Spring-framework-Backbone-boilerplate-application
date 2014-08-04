@@ -1,6 +1,6 @@
-package market.models.repository;
+package market.repository;
 
-import market.models.domain.clinic.Clinic;
+import market.domain.clinic.Clinic;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

@@ -10,7 +10,14 @@ define(['jquery'],
 		
 		search_for: "Cautare Clinici",
 		search_for_text: "Cauta dupa Clinica, ex: Implant dentar in Timisoara",
-			
+		
+		
+		menu: {
+			home: "Acasa",
+			clinics: "Clinici",
+			promotions: "Promotii",
+			reviews: "Pareri"
+		},
 		
 		account: {
 			login_message: "Logheaza-te in accountul tau",
@@ -28,6 +35,10 @@ define(['jquery'],
 			register_cabinet_name: "Nume Cabinet",
 			register_terms: "Am citit <a href\"#\" class=\"color-green\"> Termenii si Conditiile </a>",
 			register_button: "Inregistreaza-ma"
+		},
+		
+		index: {
+			slogan: "Noi aducem pacientii Europeni la dentistii Romani si la alte tari din estul europei"
 		}
 	};
 	

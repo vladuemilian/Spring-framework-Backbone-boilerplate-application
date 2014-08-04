@@ -32,7 +32,7 @@ define(['jquery', 'underscore', 'backbone',
 			//for rendering again the template ( _.template() ) - called
 			//by the language module
 			
-			var temp = _.template(indexTemplate, {lang: language});
+			var temp = _.template(indexTemplate, {lang: language.getLanguageObject()});
 			
 			this.$el.html(temp);
 		},

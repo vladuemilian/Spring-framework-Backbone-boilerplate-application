@@ -20,6 +20,10 @@ function($, Backbone, _, View, Lang, languageModule, App,
 		
 		onChange: function(){
 			//console.log("Route changed!!!!");
+		},
+		
+		before: function(){
+			$("#appContent").html('<img src="/assets/img/loading.gif" class="centered" />');
 		}
 	});
 	
@@ -36,7 +40,6 @@ function($, Backbone, _, View, Lang, languageModule, App,
 	 * @match /**
 	 */
 	app_router.on('route', function(r){
-		console.log("triggered once!!");
 		//$("#appContent").html('<img src="/assets/img/loading.gif" class="centered" />');
 	});
 
@@ -54,8 +57,8 @@ function($, Backbone, _, View, Lang, languageModule, App,
 	
 		View.render(new Master2Layout);
 		View.render(new Header2Layout({el: "#appLayout"}));
-		
 	
+		
 		require(['views/clinics'], function(view){
 			View.forceRender(new view({el: "#appContent"}))
 		});

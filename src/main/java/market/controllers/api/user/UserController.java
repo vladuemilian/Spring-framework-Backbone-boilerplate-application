@@ -1,10 +1,10 @@
-package market.controllers.api.v1dot0.user;
+package market.controllers.api.user;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import market.models.domain.user.User;
-import market.models.services.UserService;
+import market.domain.user.User;
+import market.domain.user.UserService;
 import market.validator.ValidationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.mongodb.DB;
-import com.mongodb.gridfs.GridFS;
 
 @Controller
 @ResponseBody

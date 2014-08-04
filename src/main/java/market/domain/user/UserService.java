@@ -1,8 +1,7 @@
-package market.models.services;
+package market.domain.user;
 
-import market.models.domain.user.AccountInterface;
-import market.models.domain.user.User;
-import market.models.repository.UserRepository;
+import market.repository.UserRepository;
+import market.services.ServiceException;
 import market.validator.UserValidatorInterface;
 import market.validator.ValidationException;
 

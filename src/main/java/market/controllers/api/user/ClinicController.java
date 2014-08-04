@@ -1,9 +1,13 @@
-package market.controllers.api.v1dot0.user;
+package market.controllers.api.user;
 
-import market.models.domain.clinic.Clinic;
-import market.models.repository.ClinicRepository;
+import market.domain.clinic.Clinic;
+import market.domain.user.User;
+import market.repository.ClinicRepository;
+import market.services.ICommand;
+import market.services.clinic.command.parameter.CreateClinicParameter;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @ResponseBody
+@RequestMapping(value="/api/v1.0/")
 public class ClinicController {
 	
 	public static enum Status {
@@ -27,8 +32,13 @@ public class ClinicController {
 	
 	@Autowired
 	ClinicRepository clinicRepo;
+
+	@Autowired
+	@Qualifier("CreateClinic")
+	private ICommand<CreateClinicParameter, User> createClinicCommand;
+
 	
-	@RequestMapping(value="/api/v1.0/user/{userId}/clinic", method=RequestMethod.POST)
+	@RequestMapping(value="user/{userId}/clinic", method=RequestMethod.POST)
 	public Clinic postClinic(
 			@PathVariable String userId,
 			@RequestParam("cabinet") String cabinet,
@@ -48,5 +58,15 @@ public class ClinicController {
 		clinicRepo.save(clinic);
 		
 		return clinic;
+	}
+	
+	@RequestMapping(value="/clinic", method=RequestMethod.POST)
+	public Clinic createClinic(){
+	
+		
+		this.createClinicCommand.handle(null);
+		
+	
+		return null;
 	}
 }

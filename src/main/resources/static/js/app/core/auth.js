@@ -57,6 +57,8 @@ define(['jquery', 'underscore', 'models/entity/user'
 				return this.authenticatedUser;
 			}
 			
+			
+			
 			var user = new User();
 	
 			//fetch the user from the given URL
@@ -64,6 +66,12 @@ define(['jquery', 'underscore', 'models/entity/user'
 		
 			//store the user in module member
 			this.authenticatedUser = user;
+			
+			
+			//fix the issue with username not set
+			if(this.isAuthenticated && this.authenticatedUser == null){
+				window.location.reload();
+			}
 			
 			return this.authenticatedUser;
 		},

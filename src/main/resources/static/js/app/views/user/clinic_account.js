@@ -83,6 +83,10 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 			if(status==true){
 				$("#alertSuccessLogin").show();
 				Auth.absoluteCheck();
+			
+				while(Auth.user()==null){
+				}
+				
 				View.renderAll({forceStatic: true});
 				App.router.get("appRouter").navigate("/", {trigger: true});
 			} else {

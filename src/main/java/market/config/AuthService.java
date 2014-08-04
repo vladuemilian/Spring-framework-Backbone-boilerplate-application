@@ -1,9 +1,9 @@
-package market.services;
+package market.config;
 
 import java.util.ArrayList;
 
-import market.models.domain.user.User;
-import market.models.domain.user.UserAuthority;
+import market.domain.user.User;
+import market.domain.user.UserAuthority;
 
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

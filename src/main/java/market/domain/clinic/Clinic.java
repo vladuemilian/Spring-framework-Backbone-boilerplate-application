@@ -1,6 +1,6 @@
-package market.models.domain.clinic;
+package market.domain.clinic;
 
-import market.models.domain.user.AccountInterface;
+import market.domain.user.AccountInterface;
 
 
 public class Clinic implements AccountInterface{
