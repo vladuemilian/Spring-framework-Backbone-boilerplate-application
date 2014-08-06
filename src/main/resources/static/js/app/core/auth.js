@@ -75,13 +75,16 @@ define(['jquery', 'underscore', 'models/entity/user'
 			
 			return this.authenticatedUser;
 		},
-		
+
 		/**
-		 * @brief this method will put the module members to
-		 * null and re-sends the requests to see if the user
-		 * changes it's state. 
+		 * 
 		 * 
 		 */
+		logout: function(){
+			this.authenticatedUser=null;
+			this.isAuthenticated=null;
+		}
+
 	};
 	
 	return Auth;

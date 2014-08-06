@@ -82,6 +82,7 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 			//were correct
 			if(status==true){
 				$("#alertSuccessLogin").show();
+				/*
 				Auth.absoluteCheck();
 			
 				while(Auth.user()==null){
@@ -89,6 +90,8 @@ define(['jquery', 'underscore', 'backbone', 'ajaxform', 'core/auth', 'lib/jquery
 				
 				View.renderAll({forceStatic: true});
 				App.router.get("appRouter").navigate("/", {trigger: true});
+				*/
+				window.location="/";
 			} else {
 				$("#alertFailLogin").show();
 			}

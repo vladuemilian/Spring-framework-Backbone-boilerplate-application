@@ -111,12 +111,16 @@ function($, Backbone, _, View, Lang, languageModule, App,
 	
 	app_router.on('route:logout', function(){
 		//window.location = app_vars.base_url + "/logout";
+		Auth.logout();
 		$.get("/logout", function(){
-			Auth.absoluteCheck();
+			//Auth.absoluteCheck();
 			//window.location = "/";	
-			View.renderAll();
-			App.router.get("appRouter").navigate("/", {trigger: true});	
+			//View.renderAll();
+			//App.router.get("appRouter").navigate("/", {trigger: true});	
 		});
+		//View.renderAll();
+		//View.render(new Header2Layout);
+		window.location= "/";
 	});
 
 	//register this router into app routers
