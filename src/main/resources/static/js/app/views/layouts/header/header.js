@@ -1,14 +1,17 @@
 define(['jquery', 'underscore', 'backbone',
         'models/language/language', 'core/view', 'core/auth',
-        'text!templates/layouts/header/header2.html'
+        'text!templates/layouts/header/header2.html',
+        'waypoints', 'counter', 'owlCarousel'
         ], 
         function(
         		$, _, Backbone,
         		language, View, Auth,
-        		headerTemplate
+        		headerTemplate,
+        		waypoints, counter, owlCarousel 
         		){
 	
 
+	
 	var AppView = Backbone.View.extend({
 		
 		initialize: function(){
@@ -42,6 +45,16 @@ define(['jquery', 'underscore', 'backbone',
 				$(".navbar-nav li").removeClass("active");
 				$(this).addClass("active");
 			});
+			
+			//set the header counter
+			$('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+			
+			//set the carousel
+			owlCarousel.initOwlCarousel();
+			//console.log(owlCarousel.initOwlCarousel());
 		},
 	
 		//view unique id

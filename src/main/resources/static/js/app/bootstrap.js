@@ -21,7 +21,17 @@ requirejs.config({
 		bootstrap: '/js/lib/boostrap.min',
 		ajaxform: '/js/lib/ajaxform',
 		text: '/js/lib/text',
-		templates:'../../templates'
+		templates:'../../templates',
+		
+		//counter
+		waypoints: '/assets/plugins/counter/waypoints.min',
+		counter: '/assets/plugins/counter/jquery.counterup.min',
+			
+		//carousel
+		owlCarousel: '/assets/js/plugins/owl-carousel',
+		carousel: '/assets/plugins/owl-carousel/owl-carousel/owl.carousel'
+		
+
 	},
 
 	shim:
@@ -47,6 +57,27 @@ requirejs.config({
 		'backbonePaginator': {
 			exports: 'Backbone',
 			deps: ['backbone']
+		},
+		
+		'counterWay':{
+			deps: ['jquery'],
+			exports: 'waypoints'
+		},
+
+		'cntr':{
+			deps:['jquery'],
+			exports: 'jQuery'
+		},
+		
+
+		'owlCarousel':{
+			deps: ['jquery', 'carousel'],
+			exports: 'OwlCarousel'
+		},
+		
+		'carousel': {
+			deps: ['jquery'],
+			exports: '$'
 		}
 	},
 	
