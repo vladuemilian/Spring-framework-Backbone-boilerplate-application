@@ -32,6 +32,9 @@ Maven
 
 `cd Spring-framework-Backbone-boilerplate-application`
 
+Install Mongo on your machine and update `src/main/java/application.properties` 
+mongo connection details.
+
 `mvn spring-boot:run`
 
 Browse http://localhost:9005
