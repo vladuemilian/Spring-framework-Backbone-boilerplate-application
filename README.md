@@ -16,7 +16,13 @@ The project was not intented to be published on github, but now, the
 target of this repository is to inspire another developers about how 
 to structure their applications :)
 
-#### Technologies used: ####
+#### Technical details ####
+
+The frontend is built as single page application (SPA) with Backbone, 
+all routes are handled by Backbone. When the URL changes, only required
+data are requested from the server.
+
+#### Technologies used ####
 
 Spring Framework 4 - for building the restful API
 
