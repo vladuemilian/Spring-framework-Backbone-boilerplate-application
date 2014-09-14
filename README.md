@@ -4,6 +4,9 @@
 This application provides a folder structure, an overview of how the
 folder structure should look in a big application.
 
+The bussines logic is build around decoratee pattern which I consider
+a good practice in big projects.
+
 #### Technologies used: ####
 
 Spring Framework 4 - for building the restful API
