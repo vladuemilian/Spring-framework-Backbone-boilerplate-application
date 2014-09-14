@@ -7,6 +7,12 @@ folder structure should look in a big application.
 The bussines logic is built around decoratee pattern which I consider
 a good practice in big projects.
 
+The project comes with a event-driven development approach in mind 
+using Spring events. Also a validation sample is provided. All of those
+features is coupled with service layer using decoratee pattern to keep
+your services as clean as possible.
+
+
 #### Technologies used: ####
 
 Spring Framework 4 - for building the restful API
