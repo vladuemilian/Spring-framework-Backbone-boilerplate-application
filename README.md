@@ -12,4 +12,16 @@ MongoDB - for storaged
 
 Backbone - backbone framework for building the frontend
 
+Maven
+
+### Run the project ###
+
+`git@github.com:vladuemilian/Spring-framework-Backbone-boilerplate-application.git`
+
+`cd Spring-framework-Backbone-boilerplate-application`
+
+`mvn spring-boot:run`
+
+Browse http://localhost:9005
+
 
