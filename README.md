@@ -12,6 +12,9 @@ using Spring events. Also a validation sample is provided. All of those
 features is coupled with service layer using decoratee pattern to keep
 your services as clean as possible.
 
+The project was not intented to be published on github, but now, the 
+target of this repository is to inspire another developers about how 
+to structure their applications :)
 
 #### Technologies used: ####
 
